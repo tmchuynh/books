@@ -1,0 +1,25 @@
+{
+    "name": "books",
+    "version": "1.0.0",
+    "description": "Learn web development online",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "scss": "node-sass --watch public/scss -o public/css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tmchuynh/books.git"
+    },
+    "author": "Tina Huynh",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tmchuynh/books/issues"
+    },
+    "homepage": "https://github.com/tmchuynh/books#readme",
+    "keywords": [
+        "books",
+        "resources",
+        "online"
+    ]
+}
