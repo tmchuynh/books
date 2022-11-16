@@ -4,9 +4,15 @@
     border-radius: 25px;
     border: 2px solid black;
     padding: 1rem;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     display: flex;
-    flex-direction: column;
     position: relative; }
     .feature-center .row div img {
-      width: 15rem; }
+      width: 15rem;
+      height: max-content;
+      margin: auto 0px; }
+  .feature-center .row .information {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; }
