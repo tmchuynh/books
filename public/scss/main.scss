@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-$ribbonColor: #5d84c3;
-
 * {
   outline: none;
   box-sizing: border-box;
@@ -23,6 +21,7 @@ $ribbonColor: #5d84c3;
   --search-bg: #14162b;
   --overlay-bg: rgba(36, 39, 59, 0.3);
   --scrollbar-bg: rgb(1 2 3 / 40%);
+  --ribbon-color: #5d84c3;
 }
 
 .light-mode {
@@ -70,7 +69,7 @@ body {
 .ribbon {
   width: 100px;
   height: 150px;
-  background-color: $ribbonColor;
+  background-color: var(--ribbon-color);
   position: absolute;
   right: 100px;
   top: -350px;
@@ -82,8 +81,8 @@ body {
     z-index: 2;
     left: 0;
     bottom: -50px;
-    border-left: 50px solid $ribbonColor;
-    border-right: 50px solid $ribbonColor;
+    border-left: 50px solid var(--ribbon-color);
+    border-right: 50px solid var(--ribbon-color);
     border-bottom: 50px solid transparent;
   }
 

@@ -18,7 +18,8 @@
   --popup-bg: rgb(22 25 37);
   --search-bg: #14162b;
   --overlay-bg: rgba(36, 39, 59, 0.3);
-  --scrollbar-bg: rgb(1 2 3 / 40%); }
+  --scrollbar-bg: rgb(1 2 3 / 40%);
+  --ribbon-color: #5d84c3; }
 
 .light-mode {
   --theme-bg-color: rgb(255 255 255 / 31%);
@@ -58,7 +59,7 @@ body {
 .ribbon {
   width: 100px;
   height: 150px;
-  background-color: #5d84c3;
+  background-color: var(--ribbon-color);
   position: absolute;
   right: 100px;
   top: -350px;
@@ -69,8 +70,8 @@ body {
     z-index: 2;
     left: 0;
     bottom: -50px;
-    border-left: 50px solid #5d84c3;
-    border-right: 50px solid #5d84c3;
+    border-left: 50px solid var(--ribbon-color);
+    border-right: 50px solid var(--ribbon-color);
     border-bottom: 50px solid transparent; }
   .ribbon:after {
     content: '';

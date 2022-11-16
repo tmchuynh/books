@@ -1,0 +1,12 @@
+.feature-center {
+  margin-top: 5rem; }
+  .feature-center .row div {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 1rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative; }
+    .feature-center .row div img {
+      width: 15rem; }
