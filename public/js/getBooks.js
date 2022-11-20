@@ -5,26 +5,29 @@ $(document).ready(function () {
         switch (c[i].innerHTML) {
             case "Art":
                 $.get("https://openlibrary.org/subjects/art.json?limit=100", function (data) {
-                    console.log(data.works[i].availability.isbn);
+                    console.log(data.works);
                     const author = [];
                     const subject = [];
 
-                    for (var k = 0; k < data.works[i].authors.length; k++) {
-                        // console.log(data.works[i].authors[k].name);
-                        author.push(" " +data.works[i].authors[k].name + " ");
-                    }
-                    console.log(author);
 
-                    for (var j = 0; j < data.works[i].subject.length; j++) {
-                        subject.push(" " + data.works[i].subject[j] + " ");
-                    }
 
                     
                     // newBook("title", "Micheal", 4568321, "music, classical", "headingTen", "collapseTen");
-                    // while(data.works) {
-                    newBook(data.works[i].title, author, data.works[i].availability.isbn, subject, "heading", "collapse");
+                    for (var l = 0; l < data.works.length; l++) {
+                        console.log(data.works[l].authors)
+                        for (var k = 0; k < data.works[l].authors.length; k++) {
+                            // console.log(data.works[i].authors[k].name);
+                            author.push(" " +data.works[l].authors[k].name + " ");
+                        }
+                        console.log(author);
+    
+                        for (var j = 0; j < data.works[l].subject.length; j++) {
+                            subject.push(" " + data.works[l].subject[j] + " ");
+                        }
 
-                    // }
+                        newBook(data.works[l].title, author, data.works[l].edition_count, subject, "heading" + l, "collapse" + l);
+
+                    }
                 })
 
                 break;
@@ -113,8 +116,8 @@ function newBook(title, authorName, isbnNum, keywordList, headingNum, target) {
 
     p2 = document.createElement("p");
     isbn = document.createElement("strong");
-    isbn.classList.add("isbn");
-    isbn.innerHTML = "ISBN: ";
+    isbn.classList.add("edition");
+    isbn.innerHTML = "Edition Count: ";
     p2.innerHTML =  isbnNum + "<br>";
     body.appendChild(isbn);
     body.appendChild(p2);

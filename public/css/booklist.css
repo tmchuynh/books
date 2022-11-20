@@ -2,6 +2,6 @@
   z-index: 1; }
 
 .accordion-item .accordion-collapse .author,
-.accordion-item .accordion-collapse .isbn,
+.accordion-item .accordion-collapse .edition,
 .accordion-item .accordion-collapse .keywords {
   font-weight: bold; }
