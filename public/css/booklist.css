@@ -1,2 +1,7 @@
-.accordion-button:hover {
+.accordion-item .accordion-button:hover {
   z-index: 1; }
+
+.accordion-item .accordion-collapse .author,
+.accordion-item .accordion-collapse .isbn,
+.accordion-item .accordion-collapse .keywords {
+  font-weight: bold; }

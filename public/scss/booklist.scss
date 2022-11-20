@@ -1,5 +1,14 @@
-.accordion-button {
-    &:hover {
-        z-index: 1;
+.accordion-item {
+    .accordion-button {
+        &:hover {
+            z-index: 1;
+        }
+    }
+    .accordion-collapse {
+        .author,
+        .isbn,
+        .keywords {
+            font-weight: bold;
+        }
     }
 }
