@@ -56,6 +56,10 @@ function uploadBooks(data) {
     while(container.firstChild) {
         container.removeChild(container.lastChild);
     }
+    welcome = document.querySelector(".welcome");
+    while(welcome.firstChild) {
+        welcome.removeChild(welcome.lastChild);
+    }
     console.log(data);
     const author = [];
     const subject = [];

@@ -223,3 +223,6 @@ body.light-mode .video-bg:before {
     .categories .btn:active {
       background-color: #14162b;
       color: #fff; }
+    .categories .btn:hover {
+      box-shadow: inset 200px 0 0 0 var(--theme-color);
+      color: #fff; }

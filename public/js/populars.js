@@ -1,8 +1,18 @@
 $(document).ready(function() {
     $.get("https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=fL03X4retnnENed76ITKw8NLO08bfKAc", function(data) {
-        console.log(data.results);
         for (var i = 0; i < data.results.length; i++) {
-            popularBook(data.results[i].title, data.results[i].contributor, data.results[i].description, data.results[i].isbns, "geksio", "tieosl");
+        // console.log(Object.values(data.results[i].isbns[0]));
+            const isbn_ = [];
+            if (data.results[i].isbns.length > 0) {
+                for (k = 0; k < Object.values(data.results[i].isbns[0]).length; k++) {
+                    isbn_.push(Object.values(data.results[i].isbns[0])[k])
+                    console.log(" " + isbn_ + " ");
+                }
+            } else {
+                isbn_.push("N/A");
+            }
+            
+            popularBook(data.results[i].title, data.results[i].contributor, data.results[i].description, isbn_, "geksio", "tieosl");
         }
 
     })
@@ -11,7 +21,7 @@ $(document).ready(function() {
 })
 
 
-function popularBook(titleName, contributor, description, isbnNum, quoteSaying, quoteSpeaker) {
+function popularBook(titleName, contributor, description, isbnNum) {
     var s = document.querySelector(".popular-books");
 
     card = document.createElement("div");
@@ -37,22 +47,10 @@ function popularBook(titleName, contributor, description, isbnNum, quoteSaying, 
     text.innerHTML = description;
     body.appendChild(text);
 
-    blockquote = document.createElement("blockquote");
-    blockquote.classList.add("blockquote");
-    quote = document.createElement("p");
-    quote.classList.add("quote");
-    quote.innerHTML = quoteSaying;
-    blockquote.appendChild(quote);
-    speaker = document.createElement("footer");
-    speaker.classList.add("blockquote-footer");
-    speaker.innerHTML = quoteSpeaker;
-    blockquote.appendChild(speaker);
-    body.appendChild(blockquote);
-
     footer = document.createElement("p");
     footer.classList.add("card-footer");
     footer.classList.add("text.muted");
-    footer.innerHTML = isbnNum;
+    footer.innerHTML = "ISBN(S): " + isbnNum;
     body.appendChild(footer);
 
     card.appendChild(body);
