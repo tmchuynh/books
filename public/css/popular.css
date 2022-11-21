@@ -1,21 +1,23 @@
 .heading {
   padding: 1rem;
-  margin: 0;
-  writing-mode: vertical-rl;
-  transform: scale(-1);
-  z-index: 1; }
+  margin: 0; }
 
 .popular-books {
   padding: 0 1rem;
   display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  align-content: center;
+  justify-content: space-around;
+  align-items: baseline;
   flex-direction: row;
-  position: relative; }
+  flex-wrap: wrap; }
   .popular-books .card {
     padding-bottom: 1rem;
     height: fit-content;
     margin: 1rem 2rem;
     width: 18rem; }
+    .popular-books .card .blockquote {
+      margin-bottom: 0; }
     .popular-books .card .card-footer {
       font-size: 0.75rem;
       border: none;
